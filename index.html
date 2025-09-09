@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridgeland Cell Phone Repair - Professional Mobile Device Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --dark-gray: #1f2937;
+            --light-gray: #f8fafc;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .logo-sub {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--light-gray);
+            color: var(--primary-blue);
+        }
+
+        .language-toggle {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%233b82f6" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            padding: 15px 30px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: var(--gradient-primary);
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: var(--shadow-strong);
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .phone-content i {
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Location Section */
+        .location {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .map-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .map-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section p, 
+        .footer-section li {
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-strong);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #20c55e;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-soft);
+                border-radius: 0 0 16px 16px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container"> 
+            <a href="#" class="logo">
+                <div class="logo-image">
+                    <img src="img/logos.png" alt="Logo" class="logo-img" style="width: 80px; height: 80px;">
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">Ridgeland</div>
+                    <div class="logo-sub">Cell Phone Repair</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services" data-translate="nav-services">Services</a></li>
+                <li><a href="#location" data-translate="nav-location">Location</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+                <li>
+                    <button class="language-toggle" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang">EN</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    <span class="highlight" data-translate="hero-title">Expert Cell Phone</span><br>
+                    <span data-translate="hero-subtitle">Repair Services</span>
+                </h1>
+                <p data-translate="hero-description">Professional repair services for all mobile devices. Located inside La Poblanita Supermarket in Ridgeland, SC. Fast, reliable, and affordable repairs with warranty included.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">
+                        <i class="fas fa-tools"></i>
+                        <span data-translate="hero-services">Our Services</span>
+                    </a>
+                    <a href="https://wa.me/8432582222?text=Hello,%20I%20need%20cell%20phone%20repair%20service" class="btn-secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-translate="hero-whatsapp">WhatsApp Us</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="phone-content">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">16:45</h3>
+                            <p style="color: #64748b; font-size: 0.9rem;">Like New Again!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in" data-translate="services-title">Our Services</h2>
+                <p class="section-subtitle fade-in" data-translate="services-subtitle">Professional repair services for all types of mobile devices with warranty and quality guarantee</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3 data-translate="service-screen">Screen Repair</h3>
+                    <p data-translate="service-screen-desc">LCD and OLED screen replacement for all brands. iPhone, Samsung, Google Pixel, and more. 90-day warranty included.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-battery-half"></i>
+                    </div>
+                    <h3 data-translate="service-battery">Battery Replacement</h3>
+                    <p data-translate="service-battery-desc">High-quality battery replacements to restore your phone's performance. All batteries come with manufacturer warranty.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <h3 data-translate="service-water">Water Damage Repair</h3>
+                    <p data-translate="service-water-desc">Specialized water damage restoration services. Quick response to prevent permanent damage to your device.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3 data-translate="service-charging">Charging Port Repair</h3>
+                    <p data-translate="service-charging-desc">Fix charging port issues, loose connections, and power problems. Same-day service available.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 data-translate="service-camera">Camera Repair</h3>
+                    <p data-translate="service-camera-desc">Front and rear camera repairs and replacements. Restore your phone's photo and video capabilities.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-translate="service-protection">Screen Protection</h3>
+                    <p data-translate="service-protection-desc">Tempered glass and screen protector installation. Professional application with lifetime replacement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in" data-translate="location-title">Visit Our Store</h2>
+                <p class="section-subtitle fade-in" data-translate="location-subtitle">Conveniently located inside La Poblanita Supermarket in Ridgeland, SC</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3 data-translate="store-info">Store Information</h3>
+                    <div class="info-item fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong data-translate="address">Address:</strong><br>
+                            <span>10750 S Jacob Smart Blvd<br>Ridgeland, SC 29936</span><br>
+                            <small style="color: var(--accent-red);" data-translate="inside-store">Inside La Poblanita Supermarket</small>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <strong data-translate="hours">Business Hours:</strong><br>
+                            <span data-translate="hours-detail">Monday - Saturday: 9:00 AM - 9:00 PM<br>Sunday: 9:00 AM - 9:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong data-translate="phone">Phone:</strong><br>
+                            <span> +1 843 258 2222</span>
+                        </div>
+                    </div>
+                    
+                    <div class="map-buttons">
+                        <a href="https://maps.google.com/?q=10750+S+Jacob+Smart+Blvd,+Ridgeland,+SC+29936" target="_blank" class="btn-primary">
+                            <i class="fab fa-google"></i>
+                            <span data-translate="google-maps">Google Maps</span>
+                        </a>
+                        <a href="https://maps.apple.com/?q=10750+S+Jacob+Smart+Blvd,+Ridgeland,+SC+29936" target="_blank" class="btn-secondary">
+                            <i class="fab fa-apple"></i>
+                            <span data-translate="apple-maps">Apple Maps</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container fade-in">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h4 data-translate="easy-parking">Easy Parking Available</h4>
+                    <p data-translate="parking-desc">Free parking available in the supermarket lot. Look for our bright signage inside the store.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-image">📱</div>
+                        <div class="logo-text">
+                            <div class="logo-main" style="color: white;">Ridgeland</div>
+                            <div class="logo-sub">Cell Phone Repair</div>
+                        </div>
+                    </div>
+                    <p data-translate="footer-description">Your trusted local cell phone repair experts in Ridgeland, SC. Professional service with warranty guarantee.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580136410093" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/18432582222" title="WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer-services">Services</h4>
+                    <ul>
+                        <li><a href="#" data-translate="footer-screen">Screen Repair</a></li>
+                        <li><a href="#" data-translate="footer-battery">Battery Replacement</a></li>
+                        <li><a href="#" data-translate="footer-water">Water Damage</a></li>
+                        <li><a href="#" data-translate="footer-charging">Charging Port</a></li>
+                        <li><a href="#" data-translate="footer-camera">Camera Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer-brands">Supported Brands</h4>
+                    <ul>
+                        <li>iPhone / Apple</li>
+                        <li>Samsung Galaxy</li>
+                        <li>Google Pixel</li>
+                        <li>LG</li>
+                        <li>Motorola</li>
+                        <li data-translate="footer-more">And many more...</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-translate="footer-contact">Contact Info</h4>
+                    <p>
+                        <strong data-translate="footer-address">Address:</strong><br>
+                        10750 S Jacob Smart Blvd<br>
+                        Ridgeland, SC 29936<br><br>
+                        <strong data-translate="footer-phone">Phone:</strong><br>
+                         1 843 258 2222<br><br>
+                        <strong data-translate="footer-email">Email:</strong><br>
+                        cellphonerepairridgeland@gmail.com
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ridgeland Cell Phone Repair. <span data-translate="footer-rights">All rights reserved.</span> | <span data-translate="footer-inside">Located inside La Poblanita Supermarket</span></p>
+                <p>Johanna Mora Desarrolladora web</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/18432582222?text=Hello,%20I%20need%20cell%20phone%20repair%20service" 
+       class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                'logo-main': 'Ridgeland',
+                'logo-sub': 'Cell Phone Repair',
+                'nav-services': 'Services',
+                'nav-location': 'Location',
+                'nav-contact': 'Contact',
+                'hero-title': 'Expert Cell Phone',
+                'hero-subtitle': 'Repair Services',
+                'hero-description': 'Professional repair services for all mobile devices. Located inside La Poblanita Supermarket in Ridgeland, SC. Fast, reliable, and affordable repairs with warranty included.',
+                'hero-services': 'Our Services',
+                'hero-whatsapp': 'WhatsApp Us',
+                'services-title': 'Our Services',
+                'services-subtitle': 'Professional repair services for all types of mobile devices with warranty and quality guarantee',
+                'service-screen': 'Screen Repair',
+                'service-screen-desc': 'LCD and OLED screen replacement for all brands. iPhone, Samsung, Google Pixel, and more. 90-day warranty included.',
+                'service-battery': 'Battery Replacement',
+                'service-battery-desc': 'High-quality battery replacements to restore your phone\'s performance. All batteries come with manufacturer warranty.',
+                'service-water': 'Water Damage Repair',
+                'service-water-desc': 'Specialized water damage restoration services. Quick response to prevent permanent damage to your device.',
+                'service-charging': 'Charging Port Repair',
+                'service-charging-desc': 'Fix charging port issues, loose connections, and power problems. Same-day service available.',
+                'service-camera': 'Camera Repair',
+                'service-camera-desc': 'Front and rear camera repairs and replacements. Restore your phone\'s photo and video capabilities.',
+                'service-protection': 'Screen Protection',
+                'service-protection-desc': 'Tempered glass and screen protector installation. Professional application with lifetime replacement.',
+                'location-title': 'Visit Our Store',
+                'location-subtitle': 'Conveniently located inside La Poblanita Supermarket in Ridgeland, SC',
+                'store-info': 'Store Information',
+                'address': 'Address',
+                'inside-store': 'Inside La Poblanita Supermarket',
+                'hours': 'Business Hours',
+                'hours-detail': 'Monday - Saturday: 9:00 AM - 9:00 PM<br>Sunday: 9:00 AM - 9:00 PM',
+                'phone': 'Phone',
+                'google-maps': 'Google Maps',
+                'apple-maps': 'Apple Maps',
+                'easy-parking': 'Easy Parking Available',
+                'parking-desc': 'Free parking available in the supermarket lot. Look for our bright signage inside the store.',
+                'footer-description': 'Your trusted local cell phone repair experts in Ridgeland, SC. Professional service with warranty guarantee.',
+                'footer-services': 'Services',
+                'footer-screen': 'Screen Repair',
+                'footer-battery': 'Battery Replacement',
+                'footer-water': 'Water Damage',
+                'footer-charging': 'Charging Port',
+                'footer-camera': 'Camera Repair',
+                'footer-brands': 'Supported Brands',
+                'footer-more': 'And many more...',
+                'footer-contact': 'Contact Info',
+                'footer-address': 'Address',
+                'footer-phone': 'Phone',
+                'footer-email': 'Email',
+                'footer-rights': 'All rights reserved.',
+                'footer-inside': 'Located inside La Poblanita Supermarket'
+            },
+            es: {
+                'logo-main': 'Ridgeland',
+                'logo-sub': 'Reparación de Celulares',
+                'nav-services': 'Servicios',
+                'nav-location': 'Ubicación',
+                'nav-contact': 'Contacto',
+                'hero-title': 'Reparación Experta',
+                'hero-subtitle': 'de Celulares',
+                'hero-description': 'Servicios profesionales de reparación para todos los dispositivos móviles. Ubicados dentro del Supermercado La Poblanita en Ridgeland, SC. Reparaciones rápidas, confiables y asequibles con garantía incluida.',
+                'hero-services': 'Nuestros Servicios',
+                'hero-whatsapp': 'WhatsApp',
+                'services-title': 'Nuestros Servicios',
+                'services-subtitle': 'Servicios profesionales de reparación para todo tipo de dispositivos móviles con garantía y calidad garantizada',
+                'service-screen': 'Reparación de Pantalla',
+                'service-screen-desc': 'Reemplazo de pantallas LCD y OLED para todas las marcas. iPhone, Samsung, Google Pixel y más. Garantía de 90 días incluida.',
+                'service-battery': 'Cambio de Batería',
+                'service-battery-desc': 'Reemplazos de batería de alta calidad para restaurar el rendimiento de tu teléfono. Todas las baterías vienen con garantía del fabricante.',
+                'service-water': 'Reparación por Agua',
+                'service-water-desc': 'Servicios especializados de restauración por daños de agua. Respuesta rápida para prevenir daños permanentes a tu dispositivo.',
+                'service-charging': 'Reparación de Puerto de Carga',
+                'service-charging-desc': 'Solucionamos problemas del puerto de carga, conexiones flojas y problemas de energía. Servicio el mismo día disponible.',
+                'service-camera': 'Reparación de Cámara',
+                'service-camera-desc': 'Reparaciones y reemplazos de cámaras frontales y traseras. Restaura las capacidades de foto y video de tu teléfono.',
+                'service-protection': 'Protección de Pantalla',
+                'service-protection-desc': 'Instalación de vidrio templado y protectores de pantalla. Aplicación profesional con reemplazo de por vida.',
+                'location-title': 'Visita Nuestra Tienda',
+                'location-subtitle': 'Convenientemente ubicados dentro del Supermercado La Poblanita en Ridgeland, SC',
+                'store-info': 'Información de la Tienda',
+                'address': 'Dirección',
+                'inside-store': 'Dentro del Supermercado La Poblanita',
+                'hours': 'Horarios de Atención',
+                'hours-detail': 'Lunes - Sábado: 9:00 AM - 9:00 PM<br>Domingo: 9:00 AM - 9:00 PM',
+                'phone': 'Teléfono',
+                'google-maps': 'Google Maps',
+                'apple-maps': 'Apple Maps',
+                'easy-parking': 'Estacionamiento Fácil Disponible',
+                'parking-desc': 'Estacionamiento gratuito disponible en el lote del supermercado. Busca nuestra señalización brillante dentro de la tienda.',
+                'footer-description': 'Tus expertos locales de confianza en reparación de celulares en Ridgeland, SC. Servicio profesional con garantía garantizada.',
+                'footer-services': 'Servicios',
+                'footer-screen': 'Reparación de Pantalla',
+                'footer-battery': 'Cambio de Batería',
+                'footer-water': 'Daños por Agua',
+                'footer-charging': 'Puerto de Carga',
+                'footer-camera': 'Reparación de Cámara',
+                'footer-brands': 'Marcas Soportadas',
+                'footer-more': 'Y muchas más...',
+                'footer-contact': 'Información de Contacto',
+                'footer-address': 'Dirección',
+                'footer-phone': 'Teléfono',
+                'footer-email': 'Email',
+                'footer-rights': 'Todos los derechos reservados.',
+                'footer-inside': 'Ubicado dentro del Supermercado La Poblanita'
+            }
+        };
+
+        // Global variables - FIXED: Default to English
+        let currentLanguage = 'en'; // ALWAYS starts in English
+        let isMenuOpen = false;
+
+        // Language functions - REMOVED auto-detection
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            document.getElementById('current-lang').textContent = currentLanguage.toUpperCase();
+            updateTexts();
+            updateWhatsAppLinks();
+        }
+
+        function updateTexts() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[currentLanguage][key];
+                    } else {
+                        element.innerHTML = translations[currentLanguage][key];
+                    }
+                }
+            });
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const navLinks = document.getElementById('nav-links');
+            const menuBtn = document.querySelector('.mobile-menu-btn i');
+            
+            if (isMenuOpen) {
+                navLinks.classList.add('active');
+                menuBtn.classList.remove('fa-bars');
+                menuBtn.classList.add('fa-times');
+            } else {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+                menuBtn.classList.add('fa-bars');
+            }
+        }
+
+        // Smooth scrolling
+        function smoothScroll(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // WhatsApp integration with language support
+        function updateWhatsAppLinks() {
+            const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+            const message = currentLanguage === 'es' 
+                ? 'Hola,%20necesito%20servicio%20de%20reparación%20de%20celular'
+                : 'Hello,%20I%20need%20cell%20phone%20repair%20service';
+            
+            whatsappButtons.forEach(button => {
+                const href = button.getAttribute('href');
+                const baseUrl = href.split('?')[0];
+                button.setAttribute('href', `${baseUrl}?text=${message}`);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // REMOVED detectLanguage() - always starts in English
+            updateTexts();
+            animateOnScroll();
+            updateWhatsAppLinks();
+
+            // Add click handlers for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    if (target !== '#') {
+                        smoothScroll(target);
+                        // Close mobile menu if open
+                        if (isMenuOpen) {
+                            toggleMobileMenu();
+                        }
+                    }
+                });
+            });
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', function() {
+            handleHeaderScroll();
+            animateOnScroll();
+        });
+
+        // Performance optimization
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(function() {
+                handleHeaderScroll();
+                animateOnScroll();
+            }, 10);
+        });
+    </script>
+</body>
+</html>
